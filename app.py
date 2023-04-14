@@ -14,6 +14,9 @@ from dash import no_update
 
 app = dash.Dash(__name__)
 
+
+server = app.server
+
 Sup_clean = pd.read_csv('Sup_clean1.csv')
 
 state_code = {'Kentucky': 'KY', 'California': 'CA', 'Florida': 'FL', 'North Carolina': 'NC',
