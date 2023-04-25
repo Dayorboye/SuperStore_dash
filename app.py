@@ -13,6 +13,7 @@ from dash import no_update
 # Dash Application
 
 app = dash.Dash(__name__,  external_stylesheets=[dbc.themes.VAPOR])
+server = app.server
 
 Sup_clean = pd.read_csv('Sup_clean1.csv')
 
