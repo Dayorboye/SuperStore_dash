@@ -33,22 +33,6 @@ Sup_clean['state_code'] = Sup_clean.State.apply(lambda X: state_code[X])
 
 state_data = Sup_clean[['Sales', 'Profit', 'state_code']].groupby('state_code').sum()
 
-def choropleth():
-    fig = go.Figure(data=go.Choropleth(
-      locations = state_data.index,
-      z = state_data.Sales,
-      locationmode = 'USA-states',
-      colorscale = 'Reds',
-      colorbar_title = 'Sales in USD',
-    ))
-
-    fig.update_layout(
-    title_text = 'Total State_Wise Sales',
-    geo_scope = 'usa',
-    height = 600,
-    )
-    
-    return fig
 
 def choropleth2():
     fig = go.Figure(data = go.Choropleth(
@@ -66,6 +50,24 @@ def choropleth2():
     geo_scope = 'usa',
     height = 600,
     )
+    return fig
+
+
+def choropleth():
+    fig = go.Figure(data=go.Choropleth(
+      locations = state_data.index,
+      z = state_data.Sales,
+      locationmode = 'USA-states',
+      colorscale = 'Reds',
+      colorbar_title = 'Sales in USD',
+    ))
+
+    fig.update_layout(
+    title_text = 'Total State_Wise Sales',
+    geo_scope = 'usa',
+    height = 600,
+    )
+    
     return fig
 
 Sup_cl = pd.read_csv('SampleSuperstore.csv')
