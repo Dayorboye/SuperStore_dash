@@ -45,7 +45,7 @@ def choropleth():
     fig.update_layout(
     title_text = 'Total State_Wise Sales',
     geo_scope = 'usa',
-    height = 800,
+    height = 600,
     )
     
     return fig
