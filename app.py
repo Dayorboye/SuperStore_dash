@@ -231,7 +231,7 @@ app.layout = html.Div([
             html.Br(),            
             dbc.Row([
                 dbc.Col([
-                   choropleth_fig() 
+                  choropleth2_fig() 
                 ], width=6),
                 dbc.Col([
                     choropleth_fig()
